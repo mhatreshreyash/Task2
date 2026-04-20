@@ -1,0 +1,58 @@
+#  Test Cases – Student Grading Program
+
+This document contains test cases to verify the correctness of the Student Grading Program.
+
+---
+
+##  Test Case Table
+
+| Test Case ID | Input (Name, Marks) | Expected Grade | Expected Output Message                           | Description            |
+| ------------ | ------------------- | -------------- | ------------------------------------------------- | ---------------------- |
+| TC01         | Alex, 95            | A              | 🌟 Excellent work! Keep shining!                  | Marks in highest range |
+| TC02         | John, 85            | B              | 👏 Great job! You're doing really well!           | Upper-mid range        |
+| TC03         | Sara, 70            | C              | 👍 Good effort! Keep improving!                   | متوسط performance      |
+| TC04         | Ravi, 55            | D              | 🙂 You passed! Try to do even better next time!   | Passing marks          |
+| TC05         | Neha, 40            | F              | 💪 Don't give up! Work harder and you'll improve! | Failing marks          |
+
+---
+
+##  Validation Test Cases
+
+Input         | Expected Behavior              | Description          |
+------------- | ------------------------------ | -------------------- |
+Marks = -10   | Error message shown, ask again | Below valid range    |
+ Marks = 150  | Error message shown, ask again | Above valid range    |
+ Marks = "abc"| Error message shown, ask again | Non-numeric input    |
+Marks = 100   | Valid input, Grade A           | Boundary value (max) |
+ Marks = 0    | Valid input, Grade F           | Boundary value (min) |
+
+---
+
+##  Loop Handling Test Cases
+
+| Test Case ID | Input Sequence | Expected Behavior              | Description               |
+| ------------ | -------------- | ------------------------------ | ------------------------- |
+| TC11         | 120 → 90       | Reject first, accept second    | Invalid then valid input  |
+| TC12         | -5 → abc → 75  | Reject until valid             | Multiple invalid attempts |
+| TC13         | abc → 50       | Handle exception, accept valid | Error handling test       |
+
+---
+
+##  Notes
+
+* Program should not crash for invalid inputs
+* Loop must continue until valid marks are entered
+* Output must match grading criteria exactly
+* Messages should correspond to correct grade
+
+---
+
+## ✅ Conclusion
+
+These test cases ensure:
+
+* Correct grading logic
+* Proper input validation
+* Robust handling of user errors
+
+---
